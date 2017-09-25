@@ -114,6 +114,7 @@ for each_step in range(100):
     S = H*P*H.T + R
 
     #Kalman Gain update
+    #pseudo-inverse here
     K = (P*H.T) * np.linalg.pinv(S)
     # print(K)
     Z = measurements[:,each_step].reshape(3,1)
